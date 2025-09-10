@@ -1,6 +1,7 @@
 return {
   {
     'adibhanna/laravel.nvim',
+    enabled = true,
     -- dir = "~/Developer/opensource/laravel.nvim",
     ft = { 'php', 'blade' },
     dependencies = {
@@ -15,17 +16,26 @@ return {
     end,
   },
 
-{
-    "adibhanna/laravel.nvim",
+  {
+    -- dir = "~/Developer/opensource/phprefactoring.nvim",
+    'adibhanna/phprefactoring.nvim',
+    enabled = true,
     dependencies = {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-    }, 
+      'MunifTanjim/nui.nvim',
+    },
+    ft = 'php',
     config = function()
-        require("laravel").setup()
+      require('phprefactoring').setup()
     end,
-},
-
+  },
+  {
+    dir = "~/Developer/opensource/simplemarkdown.nvim",
+    enabled = false,
+    ft = 'markdown',
+    config = function()
+      require('simplemarkdown').setup()
+    end
+  },
   -- {
   --   dir = "~/Developer/opensource/forest-night.nvim",
   --   config = function()

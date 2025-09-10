@@ -1,15 +1,26 @@
 return {
-
+   
 {
-  "supermaven-inc/supermaven-nvim",
+  "zbirenbaum/copilot-cmp",
   config = function()
-    require("supermaven-nvim").setup({})
-  end,
+    require("copilot").setup({
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    })
+    require("copilot_cmp").setup()
+  end
 },
 
     {
-        "olimorris/codecompanion.nvim",
+        "supermaven-inc/supermaven-nvim",
         enabled = false,
+        config = function()
+            require("supermaven-nvim").setup({})
+        end,
+    },
+    {
+        "olimorris/codecompanion.nvim",
+    enabled = false,
         opts = {
             extensions = {
                 history = {
@@ -155,9 +166,10 @@ return {
             },
         },
     },
+
     {
         "zbirenbaum/copilot.lua",
-        enabled = false,
+        enabled = true,
         cmd = "Copilot",
         build = ":Copilot auth",
         event = "InsertEnter",
@@ -196,7 +208,7 @@ return {
     },
     {
         "CopilotC-Nvim/CopilotChat.nvim",
-        enabled = false,
+        enabled = true,
         dependencies = {
             { "github/copilot.vim" },                       -- or zbirenbaum/copilot.lua
             { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
