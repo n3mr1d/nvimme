@@ -54,6 +54,12 @@ vim.opt.winborder = "single"      -- https://neovim.io/doc/user/options.html#'wi
 -- vim.opt.cursorlineopt = "number"              -- set the cursorline
 -- vim.opt.tabstop = 2                           -- insert 2 spaces for a tab
 -- vim.opt.laststatus = 0 -- Always display the status line
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "snacks_dashboard", "snacks_layout_box", "snacks_scratch" },
+  callback = function()
+    vim.bo.buflisted = false
+  end,
+})
 
 vim.filetype.add({
     extension = {
