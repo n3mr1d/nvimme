@@ -173,12 +173,12 @@ return {
           lualine_x = {
             search_result,
             {
-              "encoding",
+              linter_status,
               color = { fg = colors.fg, bg = custom.bg, gui = "bold" },
               padding = { left = 1, right = 1 },
             },
             {
-              "fileformat",
+              active_formatter,
               color = { fg = colors.fg, bg = custom.bg, gui = "bold" },
             },
             {
@@ -188,12 +188,12 @@ return {
               separator = { right = "" },
             },
             {
-              linter_status,
+              "fileformat",
               color = { fg = colors.fg, bg = colors.bg_highlight, gui = "bold" },
               padding = { left = 1, right = 1 },
             },
             {
-              active_formatter,
+              "encoding",
               color = { fg = colors.fg, bg = colors.bg_highlight, gui = "bold" },
               padding = { left = 1, right = 1 },
               separator = { right = "" }, -- ✅ block terakhir punya pemisah
@@ -222,8 +222,8 @@ return {
         options = {
           offsets = {
             {
-              filetype = "NvimTree",
-              text = "Nvim Tree",
+              filetype = "neo-tree",
+              text = "Neo Tree ",
               text_align = "left",
             },
           },
