@@ -3,47 +3,47 @@ return {
     "snacks.nvim",
     opts = {
       dashboard = {
-        preset = {
-          pick = function(cmd, opts)
-            return LazyVim.pick(cmd, opts)()
-          end,
-          header = [[
+        -- HEADER ASCII
+        header = {
+          "    ____  __            __        __         ",
+          "   / __ \\/ /___  ____  / /_____ _/ /_  ___ _ ",
+          "  / /_/ / / __ \\/ __ \\/ __/ __ `/ __ \\/ _ `/ ",
+          " / ____/ / /_/ / /_/ / /_/ /_/ / /_/ /  __/  ",
+          "/_/   /_/ .___/ .___/\\__/\\__,_/_.___/\\___/   ",
+          "       /_/   /_/                              ",
+        },
 
+        -- SECTIONS
+        sections = {
+          section = "header",
+          padding = { 1, 1 },
 
+          {
+            section = "keys",
+            title = "  Shortcuts",
+            indent = 2,
+            padding = { 1, 1 },
+          },
 
-
-▗▄▄▄  ▗▞▀▚▖▄   ▄ ▗▞▀▚▖█  ▄▄▄  ▄▄▄▄  ▗▞▀▚▖ ▄▄▄ 
-▐▌  █ ▐▛▀▀▘█   █ ▐▛▀▀▘█ █   █ █   █ ▐▛▀▀▘█    
-▐▌  █ ▝▚▄▄▖ ▀▄▀  ▝▚▄▄▖█ ▀▄▄▄▀ █▄▄▄▀ ▝▚▄▄▖█    
-▐▙▄▄▀                 █       █               
-                              ▀               
-
-
-       Made by N3mr4iD 󰵮  with ❤
-
-]],
-          -- stylua: ignore
-          ---@type snacks.dashboard.Item[]
-          keys = {
-            -- File Operations
-            { icon = " ", key = "f", desc = "Find File",        action = ":lua Snacks.dashboard.pick('files')" },
-            { icon = " ", key = "n", desc = "New File",         action = ":ene | startinsert" },
-            { icon = " ", key = "g", desc = "Find Text",        action = ":lua Snacks.dashboard.pick('live_grep')" },
-            { icon = " ", key = "r", desc = "Recent Files",     action = ":lua Snacks.dashboard.pick('oldfiles')" },
-            
-            -- Config & Session
-            { icon = " ", key = "c", desc = "Config",           action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-
-            -- Package / Lazy
-            { icon = " ", key = "x", desc = "Lazy Extras",      action = ":LazyExtras" },
-            { icon = "󰒲 ", key = "l", desc = "Lazy",             action = ":Lazy" },
-
-            -- Utilities
-            { icon = " ", key = "q", desc = "Quit",             action = ":qa" },
-
-
+          {
+            section = "recent_files",
+            title = "  Recent Files",
+            icon = "",
+            indent = 2,
+            padding = { 1, 1 },
+          },
+          {
+            section = "projects",
+            title = "  Projects",
+            icon = "",
+            indent = 2,
+            padding = { 1, 1 },
           },
         },
+
+        -- Gaya umum
+        section_padding = 1, -- jarak antar section
+        highlight = "Normal", -- warna default section
       },
     },
   },
