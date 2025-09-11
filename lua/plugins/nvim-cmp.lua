@@ -242,7 +242,6 @@ return {
   },
 
   -- Extra utilities
-  { "windwp/nvim-ts-autotag", event = "VeryLazy", opts = { enable_close = true, enable_rename = true, enable_close_on_slash = false } },
   { "kylechui/nvim-surround", version = "*", event = "VeryLazy", config = function() require("nvim-surround").setup({}) end },
   { "numToStr/Comment.nvim", event = "VeryLazy", opts = {} },
 }

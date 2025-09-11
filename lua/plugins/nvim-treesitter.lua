@@ -15,6 +15,9 @@ return {
                     enable = true,
                     additional_vim_regex_highlighting = false,
                 },
+                autotags = {
+                    enable = true,
+                },
                 indent = { enable = true },
                 auto_install = false,
                 ensure_installed = {
