@@ -1,40 +1,40 @@
 return {
   {
-    'adibhanna/laravel.nvim',
+    "adibhanna/laravel.nvim",
     enabled = true,
     -- dir = "~/Developer/opensource/laravel.nvim",
-    ft = { 'php', 'blade' },
+    ft = { "php", "blade" },
     dependencies = {
-      'folke/snacks.nvim', -- Optional: for enhanced UI
+      "folke/snacks.nvim", -- Optional: for enhanced UI
     },
     config = function()
-      require('laravel').setup({
+      require("laravel").setup({
         notifications = false,
         debug = false,
-        keymaps = true
+        keymaps = true,
       })
     end,
   },
 
   {
     -- dir = "~/Developer/opensource/phprefactoring.nvim",
-    'adibhanna/phprefactoring.nvim',
-    enabled = true,
+    "adibhanna/phprefactoring.nvim",
+    enabled = false,
     dependencies = {
-      'MunifTanjim/nui.nvim',
+      "MunifTanjim/nui.nvim",
     },
-    ft = 'php',
+    ft = "php",
     config = function()
-      require('phprefactoring').setup()
+      require("phprefactoring").setup()
     end,
   },
   {
     dir = "~/Developer/opensource/simplemarkdown.nvim",
     enabled = false,
-    ft = 'markdown',
+    ft = "markdown",
     config = function()
-      require('simplemarkdown').setup()
-    end
+      require("simplemarkdown").setup()
+    end,
   },
   -- {
   --   dir = "~/Developer/opensource/forest-night.nvim",
