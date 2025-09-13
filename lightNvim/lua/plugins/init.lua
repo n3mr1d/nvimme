@@ -7,6 +7,7 @@ return {
       require("base46").load_all_highlights()
     end,
   },
+
   -- file managing , picker etc
   {
     "nvim-tree/nvim-tree.lua",
@@ -60,13 +61,6 @@ return {
       require("dressing").setup()
     end,
   },
-  -- formatting!
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = { lua = { "stylua" } },
-    },
-  },
 
   -- git stuff
   {
@@ -77,9 +71,6 @@ return {
     end,
   },
 
-
-
- 
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
@@ -88,5 +79,4 @@ return {
       return require "configs.telescope"
     end,
   },
-
 }

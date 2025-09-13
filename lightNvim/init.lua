@@ -4,10 +4,10 @@ vim.g.mapleader = " "
 for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
   dofile(vim.g.base46_cache .. v)
 end
-require("core.lazy")
+require "core.lazy"
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
-require("chadrc")
-require("core.options")
-require("core.autocmds")
-require("mappings")
+require "chadrc"
+require "core.options"
+require "core.autocmds"
+require "mappings"
